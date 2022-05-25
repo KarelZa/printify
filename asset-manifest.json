@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/printify/static/css/main.2a509649.css",
-    "main.js": "/printify/static/js/main.36f7cb4c.js",
+    "main.js": "/printify/static/js/main.c95c06c7.js",
     "index.html": "/printify/index.html",
     "main.2a509649.css.map": "/printify/static/css/main.2a509649.css.map",
-    "main.36f7cb4c.js.map": "/printify/static/js/main.36f7cb4c.js.map"
+    "main.c95c06c7.js.map": "/printify/static/js/main.c95c06c7.js.map"
   },
   "entrypoints": [
     "static/css/main.2a509649.css",
-    "static/js/main.36f7cb4c.js"
+    "static/js/main.c95c06c7.js"
   ]
 }
