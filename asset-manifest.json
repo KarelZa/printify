@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/printify/static/css/main.2a509649.css",
+    "main.js": "/printify/static/js/main.87a5a78a.js",
+    "index.html": "/printify/index.html",
+    "main.2a509649.css.map": "/printify/static/css/main.2a509649.css.map",
+    "main.87a5a78a.js.map": "/printify/static/js/main.87a5a78a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a509649.css",
+    "static/js/main.87a5a78a.js"
+  ]
+}
