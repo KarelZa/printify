@@ -12,7 +12,11 @@ const Cartpage = () => {
 	// map over cartArr to get display ordered items
 	const cartElements = cartArr.map((item) => <CartItem key={item.id} item={item} />);
 
-	return <Container component={'section'}>{cartArr.length === 0 ? <EmptyCart /> : <Checkout cartElements={cartElements} />}</Container>;
+	return (
+		<Container component={'section'}>
+			{cartArr.length === 0 ? <EmptyCart /> : <Checkout cartElements={cartElements} />}
+		</Container>
+	);
 };
 
 export default Cartpage;

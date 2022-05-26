@@ -60,7 +60,7 @@ const Checkout = (props: Props) => {
 				container
 				gap={2}
 				mb={5}
-				sx={{ justifyContent: { xs: 'center', md: 'space-between' } }}
+				sx={{ justifyContent: { xs: 'center', md: 'flex-end' } }}
 			>
 				<StyledButton variant='outlined' size='large' onClick={emptyCart}>
 					Clear cart

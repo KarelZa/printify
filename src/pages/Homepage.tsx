@@ -19,7 +19,7 @@ export const Homepage = () => {
 				sx={{
 					margin: '0 auto',
 					width: { xs: '100%' },
-					padding: { xs: '.3rem .3rem', md: '0rem 3rem' },
+					padding: { md: '.3rem .4rem' },
 				}}
 				component={'section'}
 			>

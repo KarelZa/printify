@@ -4,10 +4,19 @@ import { ImageModel } from '../model/ImageModel';
 import useHover from '../hooks/useHover';
 // 3rd party libs
 import { BsFillCartPlusFill, BsFillCartDashFill } from 'react-icons/bs';
-import { FaRegHeart, FaHeart } from 'react-icons/fa';
+import {
+	FaRegHeart,
+	FaHeart,
+	FaTwitterSquare,
+	FaFacebookSquare,
+	FaInstagramSquare,
+} from 'react-icons/fa';
+import { TiSocialDribbble, TiSocialInstagram, TiSocialTwitter } from 'react-icons/ti';
+import { AiOutlineInstagram, AiOutlineFacebook } from 'react-icons/ai';
 import { StyledImageWrapper } from '../assets/styles/styledComponents/Image.styled';
 import ImageListItem from '@mui/material/ImageListItem';
 import useWindowSize from '../hooks/useWindowSize';
+import { Fade, Grow, Zoom } from '@mui/material';
 
 type Props = {
 	img: ImageModel;
@@ -62,7 +71,18 @@ export const Image = ({ img, className }: Props) => {
 				/>
 				{heartBadge()}
 				{cartBadge()}
-				{isHovered && <span className='title'>{img.name}</span>}
+				{isHovered && (
+					<Fade in={isHovered} style={{ transitionDelay: '80ms' }}>
+						<div className='hoverin'>
+							{<span className='title'>{img.name}</span>}
+							<div className='icons'>
+								<TiSocialInstagram size={29} className='icon instagram' />
+								<TiSocialDribbble size={29} className='icon dribble' />
+								<TiSocialTwitter size={29} className='icon twitter' />
+							</div>
+						</div>
+					</Fade>
+				)}
 			</StyledImageWrapper>
 		</ImageListItem>
 	);
