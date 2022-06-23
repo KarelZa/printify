@@ -7,3 +7,7 @@ Utilize
 -  React router for routing
 -  Typescript for type safety
 -  Material UI & Styled Components for UI
+
+Live-view: 
+
+![printify](https://user-images.githubusercontent.com/82606132/175270104-527f35bf-cb42-403e-a7d6-014303f3ee1f.jpg)
