@@ -6,8 +6,6 @@ import { Header } from './components/Header';
 import { Homepage } from './pages/Homepage';
 import Cartpage from './pages/Cartpage';
 import SuccessfulOrderPage from './pages/SuccessfulOrderPage';
-// 3rd party
-// Router
 import { Routes, Route, Navigate } from 'react-router-dom';
 // StyledComponents
 import { ThemeProvider as TPstyledcomp } from 'styled-components';
@@ -16,12 +14,11 @@ import { basicTheme } from './assets/styles/themes/themeBasic';
 // MUI Theme
 import { ThemeProvider as TPmui, createTheme, responsiveFontSizes } from '@mui/material';
 let theme = createTheme();
-theme = responsiveFontSizes(theme);
 
 const App = () => {
 	const { isOrderCompleted } = useContext(PrintifyContext);
 	return (
-		<TPmui theme={theme}>
+		<TPmui theme={responsiveFontSizes(theme)}>
 			<TPstyledcomp theme={basicTheme}>
 				<>
 					<GlobalStyle />

@@ -8,8 +8,7 @@ import Container from '@mui/material/Container';
 
 const Cartpage = () => {
 	const { cartArr } = useContext(PrintifyContext);
-
-	// map over cartArr to get display ordered items
+	// Mapping cart items
 	const cartElements = cartArr.map((item) => <CartItem key={item.id} item={item} />);
 
 	return (

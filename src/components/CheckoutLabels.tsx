@@ -1,4 +1,3 @@
-import React from 'react';
 import GridLabel from './GridLabel';
 // styling
 import Grid from '@mui/material/Grid';

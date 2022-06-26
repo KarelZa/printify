@@ -3,8 +3,8 @@ import { ImageModel as Image } from '../model/ImageModel';
 
 type Props = { children: React.ReactNode };
 
-// Alias Definition of Our Context
-type PrintifyContextObj = {
+// Definition of Context object
+interface PrintifyContextObj {
 	imgArr: Image[];
 	cartArr: Image[];
 	isOrderCompleted: boolean;
@@ -15,9 +15,9 @@ type PrintifyContextObj = {
 	setIsOrderCompleted: (isOrderCompleted: boolean) => void;
 	increaseQty: (img: Image) => void;
 	decreaseQty: (img: Image) => void;
-};
+}
 
-// CreatingContext from React.cC -> setting Consumer default values
+// CreatingContext -> setting Consumer default values
 export const PrintifyContext = React.createContext<PrintifyContextObj>({
 	imgArr: [],
 	cartArr: [],
@@ -32,16 +32,30 @@ export const PrintifyContext = React.createContext<PrintifyContextObj>({
 });
 
 const PrintifyContextProvider = (props: Props) => {
-	const [imgArr, setImgArr] = useState<Image[]>([]); // Container for img data
-	const [cartItemsArr, setCartItemsArr] = useState<Image[]>([]); // container of cart items
+	const [imgArr, setImgArr] = useState<Image[]>(() => {
+		return JSON.parse(localStorage.getItem('imgArr')!) || [];
+	}); // img data
+	const [cartItemsArr, setCartItemsArr] = useState<Image[]>(() => {
+		return JSON.parse(localStorage.getItem('cartItems')!) || [];
+	}); // cart items
 	const [isOrderCompleted, setIsOrderCompleted] = useState<boolean>(false);
 
 	// Pulling data
 	useEffect(() => {
-		fetch(`https://raw.githubusercontent.com/KarelZa/projects-data/main/imgData.json`)
-			.then((response) => response.json())
-			.then((actualData) => setImgArr(actualData));
-	}, []);
+		if (imgArr.length === 0) {
+			fetch(`https://raw.githubusercontent.com/KarelZa/projects-data/main/imgData.json`)
+				.then((response) => response.json())
+				.then((actualData) => setImgArr(actualData));
+		}
+	}, [imgArr.length]);
+	// Favourite localstorage
+	useEffect(() => {
+		localStorage.setItem('imgArr', JSON.stringify(imgArr));
+	}, [imgArr]);
+	// Cart Items localstorage
+	useEffect(() => {
+		localStorage.setItem('cartItems', JSON.stringify(cartItemsArr));
+	}, [cartItemsArr]);
 
 	// Favourite functionality
 	// id ==> currect image.id
@@ -98,8 +112,6 @@ const PrintifyContextProvider = (props: Props) => {
 			);
 		}
 	}
-
-	console.log(cartItemsArr);
 
 	const contextValue = {
 		imgArr: imgArr,

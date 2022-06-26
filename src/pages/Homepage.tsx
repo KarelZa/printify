@@ -9,7 +9,6 @@ import { Fab } from '@mui/material';
 export const Homepage = () => {
 	const { imgArr } = useContext(PrintifyContext); // Pulled imgArr from Context
 	const imgElements = imgArr.map((item) => <Image key={item.id} img={item} />);
-	console.log(imgArr);
 
 	return (
 		<>

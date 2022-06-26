@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { BsFillBagCheckFill } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
-// Own Styles
+// Styling
 import { StyledSuccessPage } from '../assets/styles/styledPages/SuccessfulOrderPage.styled';
 
 const SuccessfulOrderPage = () => {
