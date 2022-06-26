@@ -10,7 +10,7 @@ export const Header = () => {
 	const { cartArr } = useContext(PrintifyContext);
 	return (
 		<StyledHeader id='back-to-top-anchor'>
-			<Link to='/printify'>
+			<Link to='/'>
 				<h2>
 					P<span>rintif</span>y
 				</h2>

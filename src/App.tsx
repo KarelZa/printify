@@ -27,7 +27,7 @@ const App = () => {
 					<GlobalStyle />
 					<Header />
 					<Routes>
-						<Route path={'/printify'} element={<Homepage />} />
+						<Route path={'/'} element={<Homepage />} />
 						<Route path={'/printify/cart'} element={<Cartpage />} />
 						<Route
 							path='/printify/cart/successfulOrder'

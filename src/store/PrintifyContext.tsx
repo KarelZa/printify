@@ -99,9 +99,7 @@ const PrintifyContextProvider = (props: Props) => {
 		}
 	}
 
-	
 	console.log(cartItemsArr);
-	
 
 	const contextValue = {
 		imgArr: imgArr,
