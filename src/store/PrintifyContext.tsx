@@ -42,12 +42,10 @@ const PrintifyContextProvider = (props: Props) => {
 
 	// Pulling data
 	useEffect(() => {
-		if (imgArr.length === 0) {
-			fetch(`https://raw.githubusercontent.com/KarelZa/projects-data/main/imgData.json`)
-				.then((response) => response.json())
-				.then((actualData) => setImgArr(actualData));
-		}
-	}, [imgArr.length]);
+		fetch(`https://raw.githubusercontent.com/KarelZa/projects-data/main/imgData.json`)
+			.then((response) => response.json())
+			.then((actualData) => setImgArr(actualData));
+	}, []);
 	// Favourite localstorage
 	useEffect(() => {
 		localStorage.setItem('imgArr', JSON.stringify(imgArr));
