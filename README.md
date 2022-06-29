@@ -1,6 +1,6 @@
 # Printify 
 
-- Single Page Application build with React library about Fictional Printing service, that allows you to select favourite images or buy them.
+- Single Page Application build with React library about Fictional Printing service, that allows you to select favourite images or=order them.
 
 
 Utilize
